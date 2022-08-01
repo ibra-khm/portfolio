@@ -57,9 +57,7 @@ html{
 .navbar ul li{
     list-style: none;
     display: inline-block;
-
     position: relative;
-   
 }
 @media(min-width:300px){
     .navbar ul li{
@@ -124,7 +122,7 @@ button{
     margin-left: 6%;
     border-radius: 15px;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 100px;
     border: 0px solid;
     background: transparent;
     color: #EA0F1E;
@@ -134,9 +132,8 @@ button{
 }
 
 
-span{
+.name-move span{
     background: #EA0F1E;
-
     height: 100%;
     width: 0;
     border-radius: 15px;
@@ -156,7 +153,7 @@ button:hover{
     color: black;
 }
 
-span:hover::after{
+.name-move span:hover::after{
     content: 'Khamaiseh';
 }
 @media (min-width: 300px){
@@ -164,7 +161,7 @@ span:hover::after{
         transform: translateX(-110px) scale(0.7);
 
     }
-    span{
+    .name-move span{
         transform: translateX(0x) scale(1);
      
     }
@@ -186,7 +183,7 @@ span:hover::after{
         transform: translateX(-110px) scale(0.7);
 
     }
-    span{
+    .name-move span{
         transform: translateX(0x) scale(.7);
         font-size: 100px;
     }
@@ -208,7 +205,7 @@ span:hover::after{
         transform: translateX(-110px) scale(0.7);
 
     }
-    span{
+    .name-move span{
         transform: translateX(0x) scale(1);
         font-size: 100px;
     }
@@ -230,7 +227,7 @@ span:hover::after{
         transform: translateX(-110px) scale(0.7);
 
     }
-    span{
+    .name-move span{
         transform: translateX(0x) scale(1);
         font-size: 100px;
     }
@@ -248,7 +245,7 @@ span:hover::after{
    
 }
 
-/* ------------33333333------------------ */
+/* ------------About------------------ */
 .about{
     display: flex;
     flex-direction: row;
@@ -258,51 +255,52 @@ span:hover::after{
     width: 100%;
     height: 100vh;
     border-bottom: 1px solid black;
+    /* background: linear-gradient(360deg, #DA4453 10%, #89216B 360%); */
+    /* background: linear-gradient(360deg, #333333 10%, #dd1818 200%);  */
+    background: linear-gradient(to right, #c94b4b, black 50%, #02075d); 
 }
 
 
 #about img{
     filter:grayscale(1);
-    
-}
-@media (min-width: 300px) {
-    #about img{
-        width: 300px;
-    }
-    .text{
-        width: auto;
-    }
-    .text h1{
-        margin: 15px auto;
-    }
-    .text{
-        padding: 30px;
-        text-align: justify;
-        width: auto;
-    }
-    
-    
-}
-@media (min-width: 500px) {
-    #about img{
-        width: 480px;
-    }
-    .text{
-        width: auto;
-    }
-    .text h1{
-        margin: 15px auto;
-    }
-    .text{
-        padding: 30px;
-        text-align: justify;
-        width: 500px;
-    }
-   
+    box-shadow: 0px 0px 80px rgb(86, 84, 84);
+    border-radius: 3px;
 }
 
 
-
+.about h1{
+    color: #c94b4b;
+}
+.about .text-p{
+    line-height: 30px;
+    font-weight: 600;
+    color: rgb(223, 221, 221);
+    width: 100%;
+    overflow: scroll;
+}
+.about .text{
+    overflow: scroll;
+}
+.about .f-s {
+    color: rgb(223, 221, 221);
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s ease-out;
+}
+.about .f-s:hover {
+    font-size: 25px;
+    color: #EA0F1E;
+    
+}
+.abt-img p{
+    transform: translateY(-20px);
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+.abt-h1{
+    transform: translateY(-10px);
+}
 
 
 .exp {
@@ -322,8 +320,33 @@ span:hover::after{
     color: white;
     font-size: 40px;
     margin-top: 10px;
+    border-bottom: 3px solid #EA0F1E;
+    animation-name: hi;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
-.cards{
+
+
+@keyframes hi {
+    0%{
+        border-color: black;
+    }
+    25% {
+        border-color: #EA0F1E;
+    }
+    50%{
+        border-color: black;
+    }
+    75%{
+        border-color: #EA0F1E;
+    }
+    100%{
+        border-color: black;
+    }
+
+}
+
+.cards{ 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     padding: 40px;
@@ -334,7 +357,6 @@ span:hover::after{
     background-color: black;
     border-radius: 10px;
     transition: 0.5s;
-    border: 1px solid white;
 }
 .card:hover{
     transform: scale(0.93);
@@ -373,10 +395,7 @@ footer {
     height: 90vh;
     padding: 40px 0;
     background-color: #fff;
-    /* display: flex; */
-    /* flex-direction: row; */
 }
-
 footer .social{
     text-align: center;
     padding-bottom: 25px;
@@ -386,14 +405,71 @@ footer .social{
     width: auto;
     height: 10vh;
     margin: 20% 4%;
+    padding: 20px;
     transition: 0.6s;
+    /* border: none; */
+    border-radius: 50px;
 }
 .ftr-logo:hover{
     transform: scale(1.2);
+    box-shadow: 0px 0px 80px rgb(255, 0, 0);
 }
 
-fo p:nth-child(1){
+.ftr-txt{
     font-size: 20px;
-    margin-bottom: 5%;
+    padding-bottom: 5%;
+    font-weight: 500;
 
+}
+footer a{
+    height: 10px;
+}
+
+@media (min-width: 300px) {
+    #about img{
+        width: 300px;
+    }
+    .text{
+        width: auto;
+    }
+    .text h1{
+        margin: 15px auto;
+    }
+    .text{
+        padding: 30px;
+        text-align: justify;
+        width: auto;
+    }
+    .social{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .ftr-logo{
+        flex-direction: column;
+    }
+    
+    
+}
+@media (min-width: 500px) {
+    #about img{
+        width: 480px;
+    }
+    .text{
+        width: auto;
+    }
+    .text h1{
+        margin: 15px auto;
+    }
+    .text{
+        padding: 30px;
+        text-align: justify;
+        width: 500px;
+    }
+    .social{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .ftr-logo{
+        flex-direction: column;
+    }
 }
