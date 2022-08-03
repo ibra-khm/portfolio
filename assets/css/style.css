@@ -8,7 +8,7 @@
     display: none;
   }
 
-html{
+  html{
     height: 100vh;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
@@ -54,26 +54,20 @@ html{
     100% { opacity: 0.0; }
  } 
 
+
 .navbar ul li{
     list-style: none;
     display: inline-block;
     position: relative;
+    margin: 0 20px 0;
 }
-@media(min-width:300px){
-    .navbar ul li{
-    font-size: small;
-    padding: 5px;
-    }  
-    .navbar ul{
-        margin-right: 1%;
-    
-    } 
-}
+
 .navbar ul li a{
     text-decoration: none;
     font-weight: 600;
     color: #fff;
     text-transform: uppercase;
+    font-size: 15px;
 }
 .navbar ul li::after{
     content: '';
@@ -93,12 +87,12 @@ html{
     height: 60vh;
     position: absolute;
     top: 50%;
-    transform: translateY(-40%);
+    transform: translateY(-50%);
     text-align: center;
     color: #fff;
 }
 .content h1{
-    font-size: 130px;
+    font-size: 140px;
     font-weight: 600;
     text-align: left;
     margin-left: 30%;
@@ -106,9 +100,7 @@ html{
 
 
 
-.content h1:nth-of-type(2){
-    color: #EA0F1E;
-}
+
 .content a{
     text-decoration: none;
     color: #EA0F1E;
@@ -143,6 +135,10 @@ button{
     transition: 0.5s;
 }
 
+
+a>.name-move{
+    width: -100px;
+}
     
 
 button:hover span{
@@ -176,6 +172,7 @@ button:hover{
         width: 400px;
 
     }
+
    
 }
 @media (min-width: 500px){
@@ -391,6 +388,8 @@ button:hover{
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 90vh;
     padding: 40px 0;
@@ -404,7 +403,7 @@ footer .social{
 .ftr-logo{
     width: auto;
     height: 10vh;
-    margin: 20% 4%;
+    margin: 15% 4% 15% 4%;
     padding: 20px;
     transition: 0.6s;
     /* border: none; */
@@ -417,17 +416,49 @@ footer .social{
 
 .ftr-txt{
     font-size: 20px;
-    padding-bottom: 5%;
+    transform: translateY(10vh);
     font-weight: 500;
+    margin: 0 auto;
+    text-align: center;
 
 }
 footer a{
     height: 10px;
 }
 
-@media (min-width: 300px) {
+@media screen and (max-width: 400px) {
+    .navbar{
+        display: flex;
+        flex-direction: row;
+    }
+    .navbar ul li a{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 30px;
+        /* margin-top: 0px; */
+    }
+
+    .navbar ul li{
+    font-size: small;
+    display: flex;
+    margin: 0;
+    }  
+
+    .navbar ul{
+        margin-right: 1%;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .about{
+        background: linear-gradient( 240deg, #c94b4b, black 50%, #02075d); 
+    }
     #about img{
         width: 300px;
+        transform: translateY(20px);
+    }
+    .abt-img p{
+        transform: translateY(10px);
     }
     .text{
         width: auto;
@@ -440,14 +471,30 @@ footer a{
         text-align: justify;
         width: auto;
     }
-    .social{
+    footer{
+        display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        height: 95vh;
+    }
+    .social{
+        transform: translateY(-5vh);
     }
     .ftr-logo{
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(110px);
+        width: auto;
+        height: 80px;
     }
-    
+    .ftr-txt{
+        transform: translateY(-5vh);
+        font-size: 15px;
+    }
+    .content{
+        /* transform: translateY(-40%); */
+    }
     
 }
 @media (min-width: 500px) {
