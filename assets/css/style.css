@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     margin: 0;
@@ -14,11 +16,15 @@
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
   }
+ 
+/*----- Banner ------*/
+
 .banner {
     width: 100%;
     height: 100vh;
     background-color: black;
 }
+
 .navbar {
     width: 100%;
     height: auto;
@@ -34,12 +40,14 @@
     left: 0px;
     padding-left: 7%;
 }
+
 .logo {
     width: 150px;
     height: auto;
     cursor: pointer;
 
 }
+
 .blink-text{
     width: auto;
     height: 70px;
@@ -51,9 +59,8 @@
 @keyframes blinker
 {  
     0% { opacity: 1.0; }
-    100% { opacity: 0.0; }
- } 
-
+    100% { opacity: 0.0; } 
+} 
 
 .navbar ul li{
     list-style: none;
@@ -69,6 +76,7 @@
     text-transform: uppercase;
     font-size: 15px;
 }
+
 .navbar ul li::after{
     content: '';
     height: 3px;
@@ -79,9 +87,11 @@
     bottom: -10px;
     transition: 0.5s;
 }
+
 .navbar ul li:hover::after{
     width: 100%;
 }
+
 .content {
     width: 100%;
     height: 60vh;
@@ -91,6 +101,7 @@
     text-align: center;
     color: #fff;
 }
+
 .content h1{
     font-size: 140px;
     font-weight: 600;
@@ -98,14 +109,11 @@
     margin-left: 30%;
 }
 
-
-
-
 .content a{
     text-decoration: none;
     color: #EA0F1E;
 }
-/* ---------------------------- */
+
 button{
     display: inline-block;
  
@@ -152,6 +160,61 @@ button:hover{
 .name-move span:hover::after{
     content: 'Khamaiseh';
 }
+
+.scroll-down{
+    display: none;
+    height: 50px;
+    width: 30px;
+    border: 2px solid red;
+    position: absolute;
+    color: red;
+    left: 50%;
+    bottom: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    border: 2px solid white;
+    height: 7.5px;
+    width: 7.5px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: 2s scroll-down ease-in-out infinite;
+
+}
+.scroll-down::after{
+    top: 20%;
+    animation-delay: .5s;
+
+}
+@keyframes scroll-down{
+    0%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        top: 80%;
+    }
+    
+}
+    
+
+
+
 @media (min-width: 300px){
     .content h1{
         transform: translateX(-110px) scale(0.7);
@@ -171,6 +234,9 @@ button:hover{
     .btn{
         width: 400px;
 
+    }
+    .text p{
+        overflow: scroll;
     }
 
    
@@ -195,6 +261,9 @@ button:hover{
         width: 500px;
 
     }
+    .text p{
+        overflow: scroll;
+    }
    
 }
 @media (min-width: 700px){
@@ -216,6 +285,12 @@ button:hover{
     .btn{
         width: 500px;
 
+    }
+    .text{
+        overflow: scroll;
+    }
+    .text-p{
+        overflow: scroll;
     }
    
 }
@@ -252,22 +327,20 @@ button:hover{
     width: 100%;
     height: 100vh;
     border-bottom: 1px solid black;
-    /* background: linear-gradient(360deg, #DA4453 10%, #89216B 360%); */
-    /* background: linear-gradient(360deg, #333333 10%, #dd1818 200%);  */
     background: linear-gradient(to right, #c94b4b, black 50%, #02075d); 
 }
 
 
-#about img{
+.about img{
     filter:grayscale(1);
     box-shadow: 0px 0px 80px rgb(86, 84, 84);
     border-radius: 3px;
 }
 
-
 .about h1{
     color: #c94b4b;
 }
+
 .about .text-p{
     line-height: 30px;
     font-weight: 600;
@@ -275,30 +348,35 @@ button:hover{
     width: 100%;
     overflow: scroll;
 }
+
 .about .text{
     overflow: scroll;
 }
+
 .about .f-s {
     color: rgb(223, 221, 221);
     font-weight: 600;
     font-size: 20px;
     transition: 0.3s ease-out;
 }
+
 .about .f-s:hover {
     font-size: 25px;
-    color: #EA0F1E;
-    
+    color: #EA0F1E;   
 }
+
 .abt-img p{
     transform: translateY(-20px);
     text-align: center;
     color: white;
     font-size: 13px;
 }
+
 .abt-h1{
     transform: translateY(-10px);
 }
 
+/*-------- Experience Cards ---------*/
 
 .exp {
     background-color: black;
@@ -308,6 +386,7 @@ button:hover{
     place-items: center center;
     overflow: scroll;
 }
+
 .exp::-webkit-scrollbar{
     display: none;
 }
@@ -322,7 +401,6 @@ button:hover{
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
-
 
 @keyframes hi {
     0%{
@@ -367,6 +445,7 @@ button:hover{
 
 .container img{
     width: 100%;
+    height: 25vh;
     display: block;
     border-radius: 10px 10px 0 0;
     transition: 0.5s;
@@ -387,55 +466,82 @@ button:hover{
     font-size: 20px;
 }
 
+.details img{
+    margin-top: 5%;
+    width: auto;
+    height: 30px;
+    filter: invert(1);
+}
+
+.details span{
+    color: #EA0F1E;
+}
+
 footer {
+    position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 90vh;
+    height: 40vh;
     padding: 40px 0;
-    background-color: #fff;
+    /* background-color: red; */
 }
+
 footer .social{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     text-align: center;
     padding-bottom: 25px;
+    padding: 0 200px;
+    height: 5vh;
+
 }
 
 .ftr-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: auto;
     height: 10vh;
     margin: 15% 4% 15% 4%;
     padding: 20px;
     transition: 0.6s;
-    /* border: none; */
-    border-radius: 50px;
-}
+    border-radius: 50px;}
 .ftr-logo:hover{
     transform: scale(1.2);
     box-shadow: 0px 0px 80px rgb(255, 0, 0);
 }
+.contact a{
+    flex-direction: row;
+}
 
 .ftr-txt{
+    /* display: flex; */
+    flex-direction: column;
     font-size: 20px;
-    transform: translateY(10vh);
-    font-weight: 500;
+    transform: translateY(18vh);
+    font-weight: 300;
     margin: 0 auto;
     text-align: center;
-
-}
-footer a{
-    height: 10px;
+    align-self: flex-start;
+    justify-content: flex-start;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {  
+
     .navbar{
         display: flex;
         flex-direction: row;
     }
+
     .navbar ul li a{
         display: flex;
         flex-direction: column;
         padding: 10px 30px;
-        /* margin-top: 0px; */
     }
 
     .navbar ul li{
@@ -448,75 +554,100 @@ footer a{
         margin-right: 1%;
         display: flex;
         flex-direction: column;
+    }
+    .name-move span:hover::after{
+        content: 'Khamaiseh';
+        font-size: 80px;
+    }
     
+    .scroll-down{
+        display: initial;
     }
     .about{
         background: linear-gradient( 240deg, #c94b4b, black 50%, #02075d); 
     }
+
     #about img{
         width: 300px;
         transform: translateY(20px);
     }
+
     .abt-img p{
         transform: translateY(10px);
     }
+
     .text{
         width: auto;
+        overflow: scroll;
     }
+
     .text h1{
         margin: 15px auto;
     }
+    .text-p{
+        overflow: scroll;
+    }
+
     .text{
         padding: 30px;
         text-align: justify;
         width: auto;
     }
+
     footer{
         display: flex;
         flex-direction: column;
-        height: 95vh;
+        height: 20vh;
     }
+
     .social{
-        transform: translateY(-5vh);
+        display: flex;
+        /* padding: 0 auto; */
+        align-items: center;
+        justify-content: center;
     }
+
     .ftr-logo{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        transform: translateX(110px);
+        /* transform: translateX(110px); */
         width: auto;
-        height: 80px;
+        /* padding: 0 auto; */
+        height: 50px;
+        border-radius: 10px;
     }
+
     .ftr-txt{
-        transform: translateY(-5vh);
+        transform: translateY(9vh);
+        padding: 0 auto;
         font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
+        /* align-items: flex-end; */
     }
-    .content{
-        /* transform: translateY(-40%); */
-    }
-    
 }
+
 @media (min-width: 500px) {
+
     #about img{
         width: 480px;
     }
+
     .text{
         width: auto;
     }
+
     .text h1{
         margin: 15px auto;
     }
+
     .text{
         padding: 30px;
         text-align: justify;
         width: 500px;
     }
-    .social{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .ftr-logo{
-        flex-direction: column;
-    }
+    
 }
